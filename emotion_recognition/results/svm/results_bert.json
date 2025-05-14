@@ -1,0 +1,31 @@
+{
+  "test_accuracy": 0.4316,
+  "val_accuracy": 0.43946666666666667,
+  "test_f1_macro": 0.32974752677992525,
+  "test_f1_weighted": 0.45000798358692035,
+  "test_f1_per_class": {
+    "anger": 0.3180639585133967,
+    "disgust": 0.13157894736842105,
+    "fear": 0.171875,
+    "joy": 0.5918924595673178,
+    "sadness": 0.2652388797364086,
+    "surprise": 0.40224604389994895,
+    "neutral": 0.4273373983739837
+  },
+  "val_f1_macro": 0.3272818093479967,
+  "val_f1_weighted": 0.4569213496061077,
+  "val_f1_per_class": {
+    "anger": 0.33059991368148467,
+    "disgust": 0.08275862068965517,
+    "fear": 0.1343570057581574,
+    "joy": 0.5990859991690901,
+    "sadness": 0.2894954507857734,
+    "surprise": 0.42822851656265004,
+    "neutral": 0.4264471587891662
+  },
+  "training_time_seconds": 766.9330611228943,
+  "timestamp": "2025-05-11T15:57:38.024708",
+  "model_type": "SVM",
+  "vectorizer": "bert",
+  "model_path": "models/svm/svm_model_bert.joblib"
+}

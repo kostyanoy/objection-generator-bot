@@ -1,0 +1,17 @@
+{
+  "test_accuracy": 0.4414666666666667,
+  "test_f1_macro": 0.22759444641947635,
+  "test_f1_weighted": 0.3891719420527159,
+  "test_f1_per_class": {
+    "anger": 0.18370607028753994,
+    "disgust": 0.08275862068965517,
+    "fear": 0.034334763948497854,
+    "joy": 0.596299037749815,
+    "sadness": 0.12944983818770225,
+    "surprise": 0.1344232515894641,
+    "neutral": 0.43218954248366015
+  },
+  "model_type": "LogisticRegression",
+  "vectorizer": "FastText",
+  "timestamp": "2025-05-11T19:04:30.427648"
+}

@@ -1,0 +1,3 @@
+objection-engine
+dotenv
+python-telegram-bot

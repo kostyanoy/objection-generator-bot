@@ -1,0 +1,4 @@
+configs
+results
+.env
+*.log

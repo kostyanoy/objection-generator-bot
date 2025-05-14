@@ -1,0 +1,95 @@
+{
+  "w2v": {
+    "test_accuracy": 0.37466666666666665,
+    "val_accuracy": 0.3752,
+    "test_f1_macro": 0.27891881512563294,
+    "test_f1_weighted": 0.40587788491909776,
+    "test_f1_per_class": {
+      "anger": 0.26244343891402716,
+      "disgust": 0.1103202846975089,
+      "fear": 0.11778846153846154,
+      "joy": 0.5699391833188532,
+      "sadness": 0.22030981067125646,
+      "surprise": 0.28237585199610515,
+      "neutral": 0.38925467474321834
+    },
+    "val_f1_macro": 0.28418557149998447,
+    "val_f1_weighted": 0.40660628427864226,
+    "val_f1_per_class": {
+      "anger": 0.2620347394540943,
+      "disgust": 0.11940298507462686,
+      "fear": 0.1188118811881188,
+      "joy": 0.5595716198125836,
+      "sadness": 0.24821002386634844,
+      "surprise": 0.2748478701825558,
+      "neutral": 0.40641988092156356
+    },
+    "training_time_seconds": 409.3009352684021,
+    "timestamp": "2025-05-11T15:37:40.451461",
+    "model_type": "SVM",
+    "vectorizer": "w2v",
+    "model_path": "models/svm/svm_model_w2v.joblib"
+  },
+  "fasttext": {
+    "test_accuracy": 0.4182666666666667,
+    "val_accuracy": 0.4124,
+    "test_f1_macro": 0.3254034378839049,
+    "test_f1_weighted": 0.4366185300545028,
+    "test_f1_per_class": {
+      "anger": 0.316166592028661,
+      "disgust": 0.16339869281045752,
+      "fear": 0.19438444924406048,
+      "joy": 0.5958254269449715,
+      "sadness": 0.3041765169424744,
+      "surprise": 0.2962226640159046,
+      "neutral": 0.4076497232008052
+    },
+    "val_f1_macro": 0.31481461489255896,
+    "val_f1_weighted": 0.4311051154951508,
+    "val_f1_per_class": {
+      "anger": 0.3360762234733651,
+      "disgust": 0.12345679012345678,
+      "fear": 0.18565400843881857,
+      "joy": 0.5792047629172868,
+      "sadness": 0.2706270627062706,
+      "surprise": 0.2964426877470356,
+      "neutral": 0.4122407688416793
+    },
+    "training_time_seconds": 429.98286175727844,
+    "timestamp": "2025-05-11T15:44:50.706209",
+    "model_type": "SVM",
+    "vectorizer": "fasttext",
+    "model_path": "models/svm/svm_model_fasttext.joblib"
+  },
+  "bert": {
+    "test_accuracy": 0.4316,
+    "val_accuracy": 0.43946666666666667,
+    "test_f1_macro": 0.32974752677992525,
+    "test_f1_weighted": 0.45000798358692035,
+    "test_f1_per_class": {
+      "anger": 0.3180639585133967,
+      "disgust": 0.13157894736842105,
+      "fear": 0.171875,
+      "joy": 0.5918924595673178,
+      "sadness": 0.2652388797364086,
+      "surprise": 0.40224604389994895,
+      "neutral": 0.4273373983739837
+    },
+    "val_f1_macro": 0.3272818093479967,
+    "val_f1_weighted": 0.4569213496061077,
+    "val_f1_per_class": {
+      "anger": 0.33059991368148467,
+      "disgust": 0.08275862068965517,
+      "fear": 0.1343570057581574,
+      "joy": 0.5990859991690901,
+      "sadness": 0.2894954507857734,
+      "surprise": 0.42822851656265004,
+      "neutral": 0.4264471587891662
+    },
+    "training_time_seconds": 766.9330611228943,
+    "timestamp": "2025-05-11T15:57:38.024708",
+    "model_type": "SVM",
+    "vectorizer": "bert",
+    "model_path": "models/svm/svm_model_bert.joblib"
+  }
+}
