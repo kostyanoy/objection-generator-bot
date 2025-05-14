@@ -22,8 +22,8 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)  # логгер
 emotion_classifier = EmotionClassifier(
-    vectorizer=get_vectorizer(r"../emotion_recognition/models/vectorizers/ft_vectorizer.pkl"),
-    model=get_model(r"../emotion_recognition/models/transformer/transformer_fasttext.pt")
+    vectorizer=get_vectorizer(),
+    model=get_model()
 )
 forwarded_messages_buffer: dict[int, VideoGenerator] = {}  # обработчики сообщений
 

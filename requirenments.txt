@@ -1,3 +1,9 @@
 objection-engine
 dotenv
 python-telegram-bot
+pandas
+num2words
+pymorphy2
+scilit-learn
+gensim
+torch

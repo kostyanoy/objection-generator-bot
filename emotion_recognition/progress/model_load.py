@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import torch
 
 from emotion_recognition.architecture.transformer import load_transformer_model
@@ -6,16 +8,22 @@ from emotion_recognition.utils import EKMAN_EMOTIONS
 from emotion_recognition.vectorize.fasttest import FastTextVectorizer
 
 
-def get_model(path):
+def get_model():
+    project_root = Path(__file__).parent.parent.parent
+    path = project_root / "emotion_recognition" / "models" / "transformer" / "transformer_fasttext.pt"
+
     input_dim = 100
     num_classes = 7
-
-    model = load_transformer_model(path, input_dim, num_classes, device=device)
+    print(str(path))
+    model = load_transformer_model(str(path), input_dim, num_classes, device=device)
     return model
 
 
-def get_vectorizer(path):
-    vectorizer = FastTextVectorizer.load(path)
+def get_vectorizer():
+    project_root = Path(__file__).parent.parent.parent
+    path = project_root / "emotion_recognition" / "models" / "vectorizers" / "ft_vectorizer.pkl"
+    print(str(path))
+    vectorizer = FastTextVectorizer.load(str(path))
     return vectorizer
 
 
