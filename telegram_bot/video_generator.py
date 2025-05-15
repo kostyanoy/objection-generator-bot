@@ -2,8 +2,8 @@ import asyncio
 import json
 import logging
 import os
-import uuid
 from asyncio import AbstractEventLoop
+from datetime import datetime
 from threading import Timer
 
 from telegram import Bot, Update, Message
@@ -35,7 +35,6 @@ class VideoGenerator:
         if self.is_processing:
             self.logger.info(f"Отклонено сообщение для {self.chat_id}, уже обрабатываются")
             return
-
         # дожидаемся сбора всех пересланных сообщений
         if self.timer is not None:
             if len(self.messages) >= self.MAX_MESSAGES:
@@ -45,7 +44,6 @@ class VideoGenerator:
             else:
                 self.logger.info(f"Обновлен таймер для {self.chat_id}")
                 self.timer.cancel()
-
         self.messages.append(update.message)
         self.timer = Timer(3.0, self._generate_video)
         self.timer.start()
@@ -67,8 +65,8 @@ class VideoGenerator:
                               emotion=self.classifier.get_score(p["emotion"])) for p in scene]
 
             # рендерим видео
-            _uuid = uuid.uuid4()
-            path = f"{self.results_path_base}/out{_uuid}.mp4"
+            _id = self._generate_timestamp()
+            path = f"{self.results_path_base}/out_{_id}.mp4"
             try:
                 pass
                 render_dialog(dialog=phrases, output=path)
@@ -117,11 +115,14 @@ class VideoGenerator:
         config = {
             "dialog": dialog
         }
-        task_id = uuid.uuid4()
+        task_id = self._generate_timestamp()
         config_path = f"{self.config_path_base}/task_{task_id}.json"
         with open(config_path, 'w', encoding='utf-8') as f:
             json.dump(config, f, ensure_ascii=False, indent=2)
         return dialog
+
+    def _generate_timestamp(self) -> str:
+        return datetime.now().strftime("%Y%m%d_%H%M%S")
 
     def _send_message(self, text):
         asyncio.run_coroutine_threadsafe(

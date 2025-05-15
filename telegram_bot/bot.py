@@ -109,7 +109,6 @@ def main():
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
-    # application.add_handler(CommandHandler("status", status))
 
     application.add_handler(CallbackQueryHandler(help_command))
 

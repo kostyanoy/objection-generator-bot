@@ -63,7 +63,6 @@ class Word2VecVectorizer:
                            padding: str = 'post', truncating: str = 'post') -> np.ndarray:
         """
         Преобразование текстов в последовательности векторов для LSTM
-
         :param tokens_list: Список токенизированных предложений
         :param max_len: Максимальная длина последовательности (если None - берется максимальная длина в данных)
         :param padding: 'pre' или 'post' - где добавлять нулевые вектора
@@ -72,14 +71,11 @@ class Word2VecVectorizer:
         """
         if not self.is_trained:
             raise RuntimeError("Модель не обучена. Сначала вызовите fit()")
-
         if isinstance(tokens_list, pd.Series):
             tokens_list = tokens_list.tolist()
-
         # Определяем максимальную длину
         if max_len is None:
             max_len = max(len(tokens) for tokens in tokens_list)
-
         sequences = []
         for tokens in tokens_list:
             sequence = []
@@ -88,7 +84,6 @@ class Word2VecVectorizer:
                     sequence.append(self.model.wv[token])
                 else:
                     sequence.append(np.zeros(self.vector_size))
-
             # Обрезаем или дополняем последовательность
             if len(sequence) > max_len:
                 if truncating == 'pre':
@@ -101,9 +96,7 @@ class Word2VecVectorizer:
                     sequence = pad + sequence
                 else:
                     sequence = sequence + pad
-
             sequences.append(sequence)
-
         return np.array(sequences)
 
     def save(self, filepath: str) -> None:
