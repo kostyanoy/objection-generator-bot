@@ -99,6 +99,9 @@ class VideoGenerator:
                 sender_user: dict = msg.api_kwargs["forward_from"]
                 sender_id = sender_user["id"]
                 sender_name = sender_user.get("first_name", sender_user.get("username", "hidden"))
+            elif "forward_sender_name" in msg.api_kwargs:
+                sender_id = msg.api_kwargs["forward_sender_name"]
+                sender_name = msg.api_kwargs["forward_sender_name"]
             else:
                 sender_id = 0
                 sender_name = "hidden"
